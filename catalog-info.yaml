@@ -1,0 +1,23 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: sample-spring-boot-app-k8s-999
+  title: sample-spring-boot-app-k8s-999
+  annotations:
+    circleci.com/project-slug: github/cnoe-demo/sample-spring-boot-app-k8s-999
+    github.com/project-slug: cnoe-demo/sample-spring-boot-app-k8s-999
+    sonarqube.org/project-key: cnoe-demo_sample-spring-boot-app-k8s-999
+    backstage.io/kubernetes-id: sample-spring-boot-app-k8s-999
+    argocd/app-name: sample-spring-boot-app-k8s-999
+    prometheus.io/rule: container_memory_usage_bytes{pod=~"sample-spring-boot-app-k8s-999-.*"}|pod,rate(container_cpu_usage_seconds_total{pod=~"sample-spring-boot-app-k8s-999-.*"}[5m])|pod
+  tags:
+    - spring-boot
+    - java
+    - maven
+    - circleci
+    - renovate
+    - sonarqube
+spec:
+  type: service
+  owner: cnoe-demo@example.org 
+  lifecycle: experimental
